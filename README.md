@@ -68,10 +68,9 @@ Ex:
 'apikey="123456"',
 ```
 
-### How can I add extra fields to the Account form?
+### How can I insert dynamic extra fields to the Account form?
 
 When you go to the path /resources/views/vendor, you will see "account.blade.php". By modifying it, you can add extra fields like this.
-
 
 ```bash
  <div class="col-md-12 mb-3">
@@ -92,8 +91,6 @@ After adding, you need to go to yourproject/config/install.php, where the input 
         'phone_number' => 'required',
     ]
 ```
-
-
 
 
 ### License
