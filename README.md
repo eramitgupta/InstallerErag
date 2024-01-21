@@ -68,6 +68,32 @@ Ex:
 'apikey="123456"',
 ```
 
+### How can I add extra fields to the Account form?
+
+When you go to the path /resources/views/vendor, you will see "account.blade.php". By modifying it, you can add extra fields like this.
+
+
+```bash
+ <div class="col-md-12 mb-3">
+    <x-input label="Phone Number" required="ture" name="phone_number" type="text"
+        value="{{ old('phone_number') }}" />
+    <x-error for="phone_number" />
+ </div>
+```
+
+After adding, you need to go to yourproject/config/install.php, where the input tag name will be, and add it to the account array inside install.php like this
+
+
+```bash
+ 'account' =>    [
+        'name' => 'required|string|max:255',
+        'email' => 'required|email|unique:users|max:255',
+        'password' => 'required|string|min:6',
+        'phone_number' => 'required',
+    ]
+```
+
+
 
 
 ### License
