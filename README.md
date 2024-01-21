@@ -57,10 +57,12 @@ Certainly! If you want just the content without additional explanations, here's 
 If you want to create an additional .env file based on the configuration in the yourProject/config/install.php file, you can follow these steps:
 
 
-We will be displaying of env. Within the same, you need to include the following.
+We will be displaying of env. Within the same, you need to include the following.<br>
+"The last line, which ends with `.`, followed by a new line character `\n`, will not persist."<br>
 Ex:
+
 ```bash
-'needed="34dsf24bcgf"' . "\n"
+'needed="34dsf24bcgf"' . "\n".
 'apikey="123456"',
 ```
 
