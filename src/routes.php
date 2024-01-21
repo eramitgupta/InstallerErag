@@ -1,6 +1,6 @@
 <?php
 
-Route::group(['namespace' => 'InstallerErag\Controllers', 'middleware' => ['web', 'installCheck']], function () {
+Route::group(['namespace' => 'InstallerErag\Controllers', 'middleware' => ['web', 'installCheck'], 'prefix' => 'app'], function () {
      // Your routes go here
      Route::get('install', [InstallerErag\Controllers\InstallerController::class, 'index'])->name('installs');
      Route::post('install-check', [InstallerErag\Controllers\InstallerController::class, 'install_check'])->name('install_check');
