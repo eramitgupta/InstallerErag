@@ -60,8 +60,10 @@ If you want to create an additional .env file based on the configuration in the 
 We will be displaying an array of environments. Within the same array, you need to include the following.
 Ex:
 ```bash
-'needed="123456"',
+'needed="34dsf24bcgf"' . "\n"
+'apikey="123456"',
 ```
+
 
 
 ### License
