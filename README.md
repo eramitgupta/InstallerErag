@@ -58,7 +58,7 @@ If you want to create an additional .env file based on the configuration in the 
 We will be displaying of env. Within the same, you need to include the following.<br>
 
 ```bash
-"The last line, which ends with `.`, followed by a new line character `\n`, will not persist."<br>
+The last line, which ends with `.`, followed by a new line character `\n`, will not persist.
 Ex:
 
 'needed="34dsf24bcgf"' . "\n".
