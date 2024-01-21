@@ -22,11 +22,11 @@ composer require erag/installererag
 
 It seems like you are trying to include a service provider in your Laravel application. If you want to add the InstallerErag\InstallerServiceProvider::class to your Laravel application, you typically need to follow these steps:
 
-Locate config/app.php:
-Open the config/app.php file in your Laravel project.
+Locate `config/app.php`:
+Open the `config/app.php` file in your Laravel project.
 
 Find providers array:
-Inside the config/app.php file, find the providers array.
+Inside the `config/app.php` file, find the providers array.
 
 ```bash
 'providers' => [
@@ -51,13 +51,13 @@ Inside the config/app.php file, find the providers array.
 
 ### How to customize Requirements and Permissions?
 
-Certainly! If you want just the content without additional explanations, here's the simplified content for your yourProject/config/install.php file.
+Certainly! If you want just the content without additional explanations, here's the simplified content for your `yourProject/config/install.php` file.
 
 "requirements" => Add or remove additional PHP extensions as needed <br>
 "permissions" => Add or remove additional folder permissions as needed
 
 ### How to add new .env variable dynamic ?
-If you want to create an additional .env file based on the configuration in the yourProject/config/install.php file, you can follow these steps:
+If you want to create an additional `.env` file based on the configuration in the `yourProject/config/install.php` file, you can follow these steps:
 We will be displaying of env. Within the same, you need to include the following.<br>
 
 ```bash
@@ -70,7 +70,7 @@ Ex:
 
 ### How can I insert dynamic extra fields to the Account form?
 
-When you go to the path /resources/views/vendor, you will see "account.blade.php". By modifying it, you can add extra fields like this.
+When you go to the path `resources/views/vendor` you will see "account.blade.php". By modifying it, you can add extra fields like this.
 
 ```bash
  <div class="col-md-12 mb-3">
@@ -80,7 +80,7 @@ When you go to the path /resources/views/vendor, you will see "account.blade.php
  </div>
 ```
 
-After adding, you need to go to yourproject/config/install.php, where the input tag name will be, and add it to the account array inside install.php like this
+After adding, you need to go to `yourproject/config/install.php` where the input tag name will be, and add it to the account array inside `install.php` like this
 
 
 ```bash
