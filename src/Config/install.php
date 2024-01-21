@@ -6,12 +6,8 @@ return [
     |--------------------------------------------------------------------------
     | Server Requirements
     |--------------------------------------------------------------------------
-    |
-    | This is the default Laravel server requirements, you can add as many
-    | as your application require, we check if the extension is enabled
-    | by looping through the array and run "extension_loaded" on it.
-    |
     */
+
     'core' => [
         'minPhpVersion' => '8.2.0',
     ],
@@ -49,7 +45,7 @@ return [
         'bootstrap/cache/'       => '775',
     ],
 
-
+    // environment
 
     'environment' => [
         'form' => [
@@ -109,6 +105,7 @@ return [
         'VITE_PUSHER_SCHEME="${PUSHER_SCHEME}"' . "\n" .
         'VITE_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"',
 
+    // account
 
     'account' =>    [
         'name' => 'required|string|max:255',

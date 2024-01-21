@@ -5,10 +5,6 @@
   <a href="https://paypal.me/teamdevgeek">
     <img src="https://github.com/eramitgupta/server-commands/blob/main/%24-donate-ff69b4.svg">
   </a>
-
-  <a>
-    <img src="https://github.com/eramitgupta/server-commands/blob/main/framework.svg" alt="License">
-  </a>
 </p>
 
 ![screenshot](https://raw.githubusercontent.com/eramitgupta/files/main/Laravel-InstallerErag.jpg)
@@ -48,13 +44,21 @@ Inside the config/app.php file, find the providers array.
  https://yourdomain.com/app/install
 ```
 
+![screenshot](https://raw.githubusercontent.com/eramitgupta/files/main/InstallerErag.gif)
+
+### How to customize Requirements and Permissions?
+
+Certainly! If you want just the content without additional explanations, here's the simplified content for your yourProject/config/install.php file.
+
+"requirements" => Add or remove additional PHP extensions as needed
+"permissions" => Add or remove additional folder permissions as needed
 
 
-
-## License
+### License
 
 The MIT License (MIT). Please see License File for more information.
 
 > GitHub [@eramitgupta](https://github.com/eramitgupta) &nbsp;&middot;&nbsp;
-> Linkedin [@eramitgupta](https://www.linkedin.com/in/eramitgupta/)
+> Linkedin [@eramitgupta](https://www.linkedin.com/in/eramitgupta/)&nbsp;&middot;&nbsp;
+> Donote [@eramitgupta](https://paypal.me/teamdevgeek/)
 
