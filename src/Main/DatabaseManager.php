@@ -29,7 +29,9 @@ class DatabaseManager
     private function migrate(BufferedOutput $outputLog)
     {
         try {
-            Artisan::call('migrate', ['--force'=> true], $outputLog);
+           Artisan::call('migrate:fresh', [
+                '--force' => true, // You can use --force to avoid prompts if needed
+            ]);
         } catch (Exception $e) {
             return ['error', $outputLog];
         }
