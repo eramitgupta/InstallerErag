@@ -92,6 +92,8 @@ After adding, you need to go to `yourproject/config/install.php` where the input
     ]
 ```
 
+![screenshot](https://drive.google.com/file/d/1kqzdLvMZGUIJGCi214jB91jsDOM4UKl0/view)
+
 
 ### License
 
