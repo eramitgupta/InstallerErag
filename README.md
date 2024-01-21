@@ -92,7 +92,7 @@ After adding, you need to go to `yourproject/config/install.php` where the input
     ]
 ```
 
-### Screencasts
+### Screencasts (Video)
 
 ```bash
 https://drive.google.com/file/d/1kqzdLvMZGUIJGCi214jB91jsDOM4UKl0/view
