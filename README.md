@@ -92,9 +92,11 @@ After adding, you need to go to `yourproject/config/install.php` where the input
     ]
 ```
 
-[![Watch the video](https://raw.githubusercontent.com/eramitgupta/files/main/Laravel-InstallerErag.jpg)](https://drive.google.com/file/d/1kqzdLvMZGUIJGCi214jB91jsDOM4UKl0/view)
+### Screencasts
 
-
+```bash
+https://drive.google.com/file/d/1kqzdLvMZGUIJGCi214jB91jsDOM4UKl0/view
+```
 ### License
 
 The MIT License (MIT). Please see License File for more information.
