@@ -50,8 +50,18 @@ Inside the config/app.php file, find the providers array.
 
 Certainly! If you want just the content without additional explanations, here's the simplified content for your yourProject/config/install.php file.
 
-"requirements" => Add or remove additional PHP extensions as needed
+"requirements" => Add or remove additional PHP extensions as needed <br>
 "permissions" => Add or remove additional folder permissions as needed
+
+### How to add new .env variable dynamic ?
+If you want to create an additional .env file based on the configuration in the yourProject/config/install.php file, you can follow these steps:
+
+
+We will be displaying an array of environments. Within the same array, you need to include the following.
+Ex:
+```bash
+'needed="123456"',
+```
 
 
 ### License
