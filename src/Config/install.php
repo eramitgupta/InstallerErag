@@ -11,10 +11,6 @@ return [
     'core' => [
         'minPhpVersion' => '8.2.0',
     ],
-    'final' => [
-        'key' => true,
-        'publish' => false,
-    ],
     'requirements' => [
         'php' => [
             'openssl',
