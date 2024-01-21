@@ -1,7 +1,7 @@
 
 ## The Laravel installer is very user-friendly and easy to install.
 
-InstallerErag packages can be installed with any Laravel project. They are very user-friendly and easy to use. It helps in making all the necessary configurations dynamic, such as minimum PHP version, PHP execution, default Laravel folder permissions, .env file setup, and custom account form
+InstallerErag packages can be easily installed with any Laravel project. They are designed to be user-friendly and simple to use. With InstallerErag, you can easily configure all the necessary settings dynamically, including the minimum required PHP version, PHP execution, default Laravel folder permissions, .env file setup, and custom account form. Additionally, the package includes an automated database migration and seed process.
 
 
 <p align="center">
