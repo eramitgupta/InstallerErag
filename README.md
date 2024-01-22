@@ -18,9 +18,9 @@ InstallerErag packages can be easily installed with any Laravel project. They ar
 composer require erag/installererag
 ```
 
-### step 1
+### Step 1
 
-It seems like you are trying to include a service provider in your Laravel application. If you want to add the InstallerErag\InstallerServiceProvider::class to your Laravel application, you typically need to follow these steps:
+It seems like you are trying to include a service provider in your Laravel application. If you want to add the InstallerErag\InstallerServiceProvider::class to your Laravel application, you typically need to follow these Steps:
 
 Locate `config/app.php`:
 Open the `config/app.php` file in your Laravel project.
@@ -35,13 +35,13 @@ Inside the `config/app.php` file, find the providers array.
 ],
 ```
 
-### step 2
+### Step 2
 
 ```bash
  php artisan vendor:publish --tag=InstallerErag --force
 ```
 
-### step 3 Now start the installation
+### Step 3 Now start the installation
 
 ```bash
  https://yourdomain.com/app/install
@@ -57,7 +57,7 @@ Certainly! If you want just the content without additional explanations, here's 
 "permissions" => Add or remove additional folder permissions as needed
 
 ### How to add new .env variable dynamic ?
-If you want to create an additional `.env` file based on the configuration in the `yourProject/config/install.php` file, you can follow these steps:
+If you want to create an additional `.env` file based on the configuration in the `yourProject/config/install.php` file, you can follow these Steps:
 We will be displaying of `env` Within the same, you need to include the following.<br>
 
 ```bash
