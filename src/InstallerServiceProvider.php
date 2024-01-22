@@ -18,6 +18,7 @@ class InstallerServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->make('InstallerErag\Controllers\InstallerController');
+        $this->app->make('InstallerErag\Controllers\DatabaseConyroller');
         $this->loadViewsFrom(__DIR__ . '/Views', 'InstallerEragViews');
     }
 
