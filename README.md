@@ -97,6 +97,12 @@ After adding, you need to go to `yourproject/config/install.php` where the input
 ```bash
 https://drive.google.com/file/d/1kqzdLvMZGUIJGCi214jB91jsDOM4UKl0/view
 ```
+
+![screenshot](https://raw.githubusercontent.com/eramitgupta/files/main/installeeErag1.png)
+![screenshot](https://raw.githubusercontent.com/eramitgupta/files/main/installeeErag2.png)
+![screenshot](https://raw.githubusercontent.com/eramitgupta/files/main/installeeErag3.png)
+![screenshot](https://raw.githubusercontent.com/eramitgupta/files/main/installeeErag4.png)
+
 ### License
 
 The MIT License (MIT). Please see License File for more information.
