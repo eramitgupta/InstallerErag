@@ -20,7 +20,7 @@ composer require erag/installererag
 
 ### Step 1
 
-It seems like you are trying to include a service provider in your Laravel application. If you want to add the InstallerErag\InstallerServiceProvider::class to your Laravel application, you typically need to follow these Steps:
+It seems like you are trying to include a service provider in your Laravel application. If you want to add the `InstallerErag\InstallerServiceProvider::class` to your Laravel application, you typically need to follow these Steps:
 
 Locate `config/app.php`:
 Open the `config/app.php` file in your Laravel project.
@@ -58,19 +58,19 @@ Certainly! If you want just the content without additional explanations, here's 
 
 ### How to add new .env variable dynamic ?
 If you want to create an additional `.env` file based on the configuration in the `yourProject/config/install.php` file, you can follow these Steps:
-We will be displaying of `env` Within the same, you need to include the following.<br>
+We will be displaying of `.env` Within the same, you need to include the following.<br>
 
-```bash
 The last line, which ends with `.`, followed by a new line character `\n`, will not persist.
 Ex:
 
+```bash
 'needed="34dsf24bcgf"' . "\n".
 'apikey="123456"',
 ```
 
 ### How can I insert dynamic extra fields to the Account form?
 
-When you go to the path `resources/views/vendor` you will see "account.blade.php". By modifying it, you can add extra fields like this.
+When you go to the path `resources/views/vendor` you will see `account.blade.php` By modifying it, you can add extra fields like this.
 
 ```bash
  <div class="col-md-12 mb-3">
