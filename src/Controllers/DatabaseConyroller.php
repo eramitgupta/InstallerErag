@@ -49,7 +49,7 @@ class DatabaseConyroller extends Controller
 
           $this->EnvironmentManager->saveFileWizard($request);
 
-          return redirect(route('account'));
+          return redirect(route('finish'));
      }
 
      private function checkDatabaseConnection(Request $request)
