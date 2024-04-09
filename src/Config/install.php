@@ -9,7 +9,7 @@ return [
     */
 
     'core' => [
-        'minPhpVersion' => '8.2.0',
+        'minPhpVersion' => '8.1.0',
     ],
     'requirements' => [
         'php' => [
@@ -36,9 +36,9 @@ return [
     |
     */
     'permissions' => [
-        'storage/framework/'     => '775',
-        'storage/logs/'          => '775',
-        'bootstrap/cache/'       => '775',
+        // 'public/uploads/'     => '777',
+        // 'storage/logs/'          => '775',
+        // 'bootstrap/cache/'       => '775',
     ],
 
     // environment
@@ -66,6 +66,8 @@ return [
 
     'env' => 'BROADCAST_DRIVER=log' . "\n" .
         'CACHE_DRIVER=file' . "\n" .
+        'QUERY_DETECTOR_ENABLED=false' . "\n" .
+        'DEBUGBAR_ENABLED=false' . "\n" .
         'FILESYSTEM_DISK=local' . "\n" .
         'QUEUE_CONNECTION=sync' . "\n" .
         'SESSION_DRIVER=file' . "\n" .
@@ -104,7 +106,7 @@ return [
     // account
 
     'account' =>    [
-        'name' => 'required|string|max:255',
+        'first_name' => 'required|string|max:255',
         'email' => 'required|email|unique:users|max:255',
         'password' => 'required|string|min:6',
     ]
