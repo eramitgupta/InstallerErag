@@ -1,4 +1,4 @@
-@section('title', 'Account')
+{{-- @section('title', 'Account')
 @extends('vendor.InstallerEragViews.app-layout')
 @section('content')
     <section class="mt-4">
@@ -10,9 +10,9 @@
                         <div class="tab">
 
                             <div class="col-md-12 mb-3">
-                                <x-input label="Name" required="ture" name="name" type="text"
-                                    value="{{ old('name') }}" />
-                                <x-error for="name" />
+                                <x-input label="Name" required="ture" name="first_name" type="text"
+                                    value="{{ old('first_name') }}" />
+                                <x-error for="first_name" />
                             </div>
 
                             <div class="col-md-12 mb-3">
@@ -38,4 +38,4 @@
             </div>
         </div>
     </section>
-@endsection
+@endsection --}}
