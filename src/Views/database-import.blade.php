@@ -11,11 +11,11 @@
 
                             <div class="col-md-4 mb-3">
                                 <x-input label="App Name" required="ture" name="app_name" type="text"
-                                    value="{{ old('app_name') }}" />
+                                    value="{{ old('app_name') }}" placeholder="Vcard"/>
                                 <x-error for="app_name" />
                             </div>
 
-                            <div class="col-md-4 mb-3">
+                            {{-- <div class="col-md-4 mb-3">
                                 <x-select label="App Environment" class="form-control" required="ture" name="environment">
                                     <option value="">--Select--</option>
                                     <option value="local" selected>Local</option>
@@ -55,7 +55,7 @@
                                     <option value="emergency">emergency</option>
                                     </select>
                                 </x-select>
-                            </div>
+                            </div> --}}
 
                             @php
                                 $isHttps = app('request')->isSecure();
@@ -69,10 +69,10 @@
                                 <x-error for="app_url" />
                             </div>
 
-                            <div class="col-md-4 mb-3"></div>
+                            {{-- <div class="col-md-4 mb-3"></div> --}}
 
 
-                            <div class="col-md-4 mb-3">
+                            {{-- <div class="col-md-4 mb-3">
                                 <x-select label="Database Connection" class="form-control" required="ture"
                                     name="database_connection">
                                     <option value="mysql" selected>mysql</option>
@@ -80,12 +80,15 @@
                                     <option value="pgsql">pgsql</option>
                                     <option value="sqlsrv">sqlsrv</option>
                                 </x-select>
-                            </div>
+                            </div> --}}
                             <div class="col-md-4 mb-3">
                                 <x-input label="Database Host" required="ture" name="database_hostname" type="text"
                                     value="{{ old('database_hostname', '127.0.0.1') }}" />
                                 <x-error for="database_hostname" />
                             </div>
+                                <x-input required="ture" name="database_connection" type="hidden"
+                                    value="{{ old('database_connection', 'mysql') }}" />
+                                <x-error for="database_connection" />
                             <div class="col-md-4 mb-3">
                                 <x-input label="Database Port" required="ture" name="database_port" type="text"
                                     value="{{ old('database_port', '3306') }}" />
