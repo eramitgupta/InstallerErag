@@ -1,12 +1,11 @@
 <?php
-
 namespace InstallerErag\Components;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Select extends Component
+class InstallInput extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +20,6 @@ class Select extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('vendor.InstallerEragViews.components.select');
+        return view('vendor.InstallerEragViews.components.install-input');
     }
 }

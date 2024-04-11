@@ -1,12 +1,12 @@
 <?php
 
-Route::get('app', function() {
+Route::get('install-app', function() {
      return redirect(route('installs'));
  });
 
-Route::group(['namespace' => 'InstallerErag\Controllers', 'middleware' => ['web', 'installCheck'], 'prefix' => 'app'], function () {
+Route::group(['namespace' => 'InstallerErag\Controllers', 'middleware' => ['web', 'installCheck'], 'prefix' => 'install-app'], function () {
      // Your routes go here
-     Route::get('install', [InstallerErag\Controllers\InstallerController::class, 'index'])->name('installs');
+     Route::get('requirements-permissions', [InstallerErag\Controllers\InstallerController::class, 'index'])->name('installs');
      Route::post('install-check', [InstallerErag\Controllers\InstallerController::class, 'install_check'])->name('install_check');
 
      Route::get('database-import', [InstallerErag\Controllers\DatabaseConyroller::class, 'database_import'])->name('database_import');

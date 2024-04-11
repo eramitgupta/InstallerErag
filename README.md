@@ -74,9 +74,9 @@ When you go to the path `resources/views/vendor` you will see `account.blade.php
 
 ```bash
  <div class="col-md-12 mb-3">
-    <x-input label="Phone Number" required="ture" name="phone_number" type="text"
+    <x-install-input label="Phone Number" required="ture" name="phone_number" type="text"
         value="{{ old('phone_number') }}" />
-    <x-error for="phone_number" />
+    <x-install-error for="phone_number" />
  </div>
 ```
 

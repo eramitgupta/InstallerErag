@@ -10,21 +10,21 @@
                         <div class="tab">
 
                             <div class="col-md-12 mb-3">
-                                <x-input label="Name" required="ture" name="name" type="text"
+                                <x-install-input label="Name" required="ture" name="name" type="text"
                                     value="{{ old('name') }}" />
-                                <x-error for="name" />
+                                <x-install-error for="name" />
                             </div>
 
                             <div class="col-md-12 mb-3">
-                                <x-input label="Email" required="ture" name="email" type="email"
+                                <x-install-input label="Email" required="ture" name="email" type="email"
                                     value="{{ old('email') }}" />
-                                <x-error for="email" />
+                                <x-install-error for="email" />
                             </div>
 
                             <div class="col-md-12 mb-3">
-                                <x-input label="Password" required="ture" name="password" type="password"
+                                <x-install-input label="Password" required="ture" name="password" type="password"
                                     value="{{ old('password') }}" />
-                                <x-error for="password" />
+                                <x-install-error for="password" />
                             </div>
 
                         </div>

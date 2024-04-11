@@ -10,20 +10,20 @@
                         <div class="row">
 
                             <div class="col-md-4 mb-3">
-                                <x-input label="App Name" required="ture" name="app_name" type="text"
+                                <x-install-input label="App Name" required="ture" name="app_name" type="text"
                                     value="{{ old('app_name') }}" />
-                                <x-error for="app_name" />
+                                <x-install-error for="app_name" />
                             </div>
 
                             <div class="col-md-4 mb-3">
-                                <x-select label="App Environment" class="form-control" required="ture" name="environment">
+                                <x-install-select label="App Environment" class="form-control" required="ture" name="environment">
                                     <option value="">--Select--</option>
                                     <option value="local" selected>Local</option>
                                     <option value="development">Development</option>
                                     <option value="qa">Qa</option>
                                     <option value="production">Production</option>
                                     <option value="other">Other</option>
-                                </x-select>
+                                </x-install-select>
                             </div>
 
                             <div class="col-md-4 mt-4">
@@ -44,7 +44,7 @@
                             </div>
 
                             <div class="col-md-4 mb-3">
-                                <x-select label="App Log Level" class="form-control" required="ture" name="app_log_level">
+                                <x-install-select label="App Log Level" class="form-control" required="ture" name="app_log_level">
                                     <option value="debug" selected>debug</option>
                                     <option value="info">info</option>
                                     <option value="notice">notice</option>
@@ -54,7 +54,7 @@
                                     <option value="alert">alert</option>
                                     <option value="emergency">emergency</option>
                                     </select>
-                                </x-select>
+                                </x-install-select>
                             </div>
 
                             @php
@@ -64,48 +64,48 @@
                             @endphp
 
                             <div class="col-md-4 mb-3">
-                                <x-input label="App Url" required="ture" name="app_url" type="url"
+                                <x-install-input label="App Url" required="ture" name="app_url" type="url"
                                     value="{{ old('app_url', $base_url) }}" />
-                                <x-error for="app_url" />
+                                <x-install-error for="app_url" />
                             </div>
 
                             <div class="col-md-4 mb-3"></div>
 
 
                             <div class="col-md-4 mb-3">
-                                <x-select label="Database Connection" class="form-control" required="ture"
+                                <x-install-select label="Database Connection" class="form-control" required="ture"
                                     name="database_connection">
                                     <option value="mysql" selected>mysql</option>
                                     <option value="sqlite">sqlite</option>
                                     <option value="pgsql">pgsql</option>
                                     <option value="sqlsrv">sqlsrv</option>
-                                </x-select>
+                                </x-install-select>
                             </div>
                             <div class="col-md-4 mb-3">
-                                <x-input label="Database Host" required="ture" name="database_hostname" type="text"
+                                <x-install-input label="Database Host" required="ture" name="database_hostname" type="text"
                                     value="{{ old('database_hostname', '127.0.0.1') }}" />
-                                <x-error for="database_hostname" />
+                                <x-install-error for="database_hostname" />
                             </div>
                             <div class="col-md-4 mb-3">
-                                <x-input label="Database Port" required="ture" name="database_port" type="text"
+                                <x-install-input label="Database Port" required="ture" name="database_port" type="text"
                                     value="{{ old('database_port', '3306') }}" />
-                                <x-error for="database_port" />
+                                <x-install-error for="database_port" />
 
                             </div>
                             <div class="col-md-4 mb-3">
-                                <x-input label="Database Name" required="ture" name="database_name" type="text"
+                                <x-install-input label="Database Name" required="ture" name="database_name" type="text"
                                     value="{{ old('database_name') }}" />
-                                <x-error for="database_name" />
+                                <x-install-error for="database_name" />
                             </div>
                             <div class="col-md-4 mb-3">
-                                <x-input label="Database User Name" required="ture" name="database_username" type="text"
+                                <x-install-input label="Database User Name" required="ture" name="database_username" type="text"
                                     value="{{ old('database_username') }}" />
-                                <x-error for="database_username" />
+                                <x-install-error for="database_username" />
                             </div>
                             <div class="col-md-4 mb-3">
-                                <x-input label="Database Password" required="ture" name="database_password"
+                                <x-install-input label="Database Password" required="ture" name="database_password"
                                     type="text" value="{{ old('database_password') }}" />
-                                <x-error for="database_password" />
+                                <x-install-error for="database_password" />
                             </div>
 
                         </div>

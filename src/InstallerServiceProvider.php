@@ -6,9 +6,9 @@ use Illuminate\Support\ServiceProvider;
 use InstallerErag\Middleware\InstallMiddleware;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Blade;
-use InstallerErag\Components\error;
-use InstallerErag\Components\Input;
-use InstallerErag\Components\Select;
+use InstallerErag\Components\InstallError;
+use InstallerErag\Components\InstallInput;
+use InstallerErag\Components\InstallSelect;
 
 class InstallerServiceProvider extends ServiceProvider
 {
@@ -31,9 +31,9 @@ class InstallerServiceProvider extends ServiceProvider
 
         $router->middlewareGroup('installCheck', [InstallMiddleware::class]);
 
-        Blade::component('input', Input::class);
-        Blade::component('error', error::class);
-        Blade::component('select', Select::class);
+        Blade::component('install-input', InstallInput::class);
+        Blade::component('install-error', InstallError::class);
+        Blade::component('install-select', InstallSelect::class);
 
         $this->publishes([
             __DIR__.'/Views' => resource_path('views/vendor/InstallerEragViews'),

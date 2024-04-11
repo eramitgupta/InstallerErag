@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class error extends Component
+class InstallError extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class error extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('vendor.InstallerEragViews.components.error');
+        return view('vendor.InstallerEragViews.components.install-error');
     }
 }

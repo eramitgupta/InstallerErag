@@ -8,6 +8,9 @@ return [
     |--------------------------------------------------------------------------
     */
 
+    'install_title' => 'Laravel Application Install',
+
+    // 
     'core' => [
         'minPhpVersion' => '8.2.0',
     ],
