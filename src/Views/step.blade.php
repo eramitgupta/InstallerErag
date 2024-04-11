@@ -5,22 +5,22 @@
                 <h2 id="heading">Laravel Application Install</h2>
                 <form id="msform">
                     <ul id="progressbar">
-                        <li class="{{ Route::currentRouteName() == 'installs' ? 'active' : '' }} {{ Route::currentRouteName() == 'database_import' ? 'active' : '' }}{{ Route::currentRouteName() == 'finish' ? 'active' : '' }}"
+                        <li class="{{ Route::currentRouteName() == 'installs' ? 'active' : '' }} {{ Route::currentRouteName() == 'database_import' ? 'active' : '' }} {{ Route::currentRouteName() == 'account' ? 'active' : '' }} {{ Route::currentRouteName() == 'finish' ? 'active' : '' }}"
                             id="RequirementsPermissions"><strong>Requirements & Permissions</strong>
                         </li>
-                        <li class="{{ Route::currentRouteName() == 'database_import' ? 'active' : '' }}  {{ Route::currentRouteName() == 'finish' ? 'active' : '' }}"
+                        <li class="{{ Route::currentRouteName() == 'database_import' ? 'active' : '' }} {{ Route::currentRouteName() == 'account' ? 'active' : '' }} {{ Route::currentRouteName() == 'finish' ? 'active' : '' }}"
                             id="DatabaseImport"><strong>Database Import</strong></li>
-                        {{-- <li class="{{ Route::currentRouteName() == 'account' ? 'active' : '' }}{{ Route::currentRouteName() == 'finish' ? 'active' : '' }}"
+                        <li class="{{ Route::currentRouteName() == 'account' ? 'active' : '' }} {{ Route::currentRouteName() == 'finish' ? 'active' : '' }}"
                             id="account">
-                            <strong>Account</strong>
-                        </li> --}}
+                            <strong>Mail Setup</strong>
+                        </li>
                         <li class="{{ Route::currentRouteName() == 'finish' ? 'active' : '' }}" id="confirm">
                             <strong>Finish</strong>
                         </li>
                     </ul>
                     @php
-                        $totalSteps = 3;
-                        $currentStep = array_search(Route::currentRouteName(), ['installs', 'database_import', 'finish']) + 1;
+                        $totalSteps = 4;
+                        $currentStep = array_search(Route::currentRouteName(), ['installs', 'database_import', 'account', 'finish']) + 1;
                         $progressPercentage = ($currentStep / $totalSteps) * 100;
                     @endphp
                     <div class="progress" role="progressbar" aria-label="Default striped example"
