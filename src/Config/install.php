@@ -36,9 +36,9 @@ return [
     |
     */
     'permissions' => [
-        // 'public/uploads/'     => '777',
-        // 'storage/logs/'          => '775',
-        // 'bootstrap/cache/'       => '775',
+        'public/uploads/'     => '777',
+        'storage/logs/'          => '775',
+        'bootstrap/cache/'       => '775',
     ],
 
     // environment
@@ -105,9 +105,9 @@ return [
 
     // account
 
-    'account' =>    [
-        'first_name' => 'required|string|max:255',
-        'email' => 'required|email|unique:users|max:255',
-        'password' => 'required|string|min:6',
-    ]
+    // 'account' =>    [
+    //     'first_name' => 'required|string|max:255',
+    //     'email' => 'required|email|unique:users|max:255',
+    //     'password' => 'required|string|min:6',
+    // ]
 ];
