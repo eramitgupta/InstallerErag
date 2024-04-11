@@ -44,7 +44,7 @@ Inside the `config/app.php` file, find the providers array.
 ### Step 3 Now start the installation
 
 ```bash
- https://yourdomain.com/app/install
+ https://yourdomain.com/install-app
 ```
 
 ![screenshot](https://raw.githubusercontent.com/eramitgupta/files/main/InstallerErag.gif)
