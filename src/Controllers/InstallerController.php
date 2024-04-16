@@ -36,20 +36,23 @@ class InstallerController extends Controller
 
     public function index()
     {
+        try {
+            DB::connection()->getPdo();
+            return redirect(URL::to('/'));
+        } catch (\Exception $e) {
+            $permissions = $this->permissions->check(
+                config('install.permissions')
+            );
 
-        $permissions = $this->permissions->check(
-            config('install.permissions')
-        );
+            $phpSupportInfo = $this->requirements->checkPHPversion(
+                config('install.core.minPhpVersion')
+            );
+            $requirements = $this->requirements->check(
+                config('install.requirements')
+            );
 
-        $phpSupportInfo = $this->requirements->checkPHPversion(
-            config('install.core.minPhpVersion')
-        );
-        $requirements = $this->requirements->check(
-            config('install.requirements')
-        );
-
-
-        return view('InstallerEragViews::index', compact('permissions', 'requirements', 'phpSupportInfo'));
+            return view('InstallerEragViews::index', compact('permissions', 'requirements', 'phpSupportInfo'));
+        }
     }
 
 
