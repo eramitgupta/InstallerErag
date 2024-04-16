@@ -28,7 +28,12 @@ class DatabaseConyroller extends Controller
 
      public function database_import(Request $request)
      {
-          return view('InstallerEragViews::database-import');
+        try {
+            DB::connection()->getPdo();
+            return redirect(URL::to('/'));
+        } catch (\Exception $e) {
+            return view('InstallerEragViews::database-import');
+        }
      }
 
      public function saveWizard(Request $request, Redirector $redirect)
