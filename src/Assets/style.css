@@ -1,6 +1,6 @@
 #heading {
     text-transform: uppercase;
-    color: #673AB7;
+    color: #7638F9;
     font-weight: normal
 }
 
@@ -50,13 +50,13 @@
     -moz-box-shadow: none !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
-    border: 1px solid #673AB7;
+    border: 1px solid #7638F9;
     outline-width: 0
 }
 
 #msform .action-button {
     width: 100px;
-    background: #673AB7;
+    background: #7638F9;
     font-weight: bold;
     color: white;
     border: 0 none;
@@ -98,14 +98,14 @@
 
 .fs-title {
     font-size: 25px;
-    color: #673AB7;
+    color: #7638F9;
     margin-bottom: 15px;
     font-weight: normal;
     text-align: left
 }
 
 .purple-text {
-    color: #673AB7;
+    color: #7638F9;
     font-weight: normal
 }
 
@@ -129,7 +129,7 @@
 }
 
 #progressbar .active {
-    color: #673AB7
+    color: #7638F9
 }
 
 #progressbar li {
@@ -189,7 +189,7 @@
 
 #progressbar li.active:before,
 #progressbar li.active:after {
-    background: #673AB7
+    background: #7638F9
 }
 
 .progress {
@@ -197,7 +197,7 @@
 }
 
 .progress-bar {
-    background-color: #673AB7
+    background-color: #7638F9
 }
 
 .fit-image {
@@ -211,18 +211,18 @@ form {
 }
 
 .card-footer {
-    background-color: rgb(103 58 183 / 90%);
+    background-color: #F3F3FF;
 }
 
 .btn-primary {
-    --bs-btn-bg: #673AB7;
-    --bs-btn-border-color: #673AB7;
+    --bs-btn-bg: #7638F9;
+    --bs-btn-border-color: #7638F9;
 }
 
 .btn:hover {
-    color: #673AB7 !important;
+    color: #7638F9 !important;
     background-color: #f8f9fa !important;
-    border-color: #f8f9fa !important;
+    border-color: #7638F9 !important;
 }
 
 .form-control:focus {
@@ -263,4 +263,17 @@ select option[selected] {
 
 .select_error_border {
     border-color: #dc3545;
+}
+
+.text-bg-success{
+    background-color: #29C639 !important;
+}
+
+.text-success
+{
+    color: #29C639 !important;
+}
+
+.text-bg-danger{
+    background-color: #FB3B4E !important;
 }
