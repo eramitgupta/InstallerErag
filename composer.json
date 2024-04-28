@@ -1,6 +1,6 @@
 {
     "name": "erag/installererag",
-    "description": "Laravel Installer: Simplifies Laravel application installation for a seamless setup experience. Requires PHP 8.0.0+, follows PSR-4 autoload, and is MIT-licensed.",
+    "description": "Laravel Installer: Simplifies Laravel application installation for a seamless setup experience. Requires PHP 8.0.0+",
     "license": "MIT",
     "authors": [
         {

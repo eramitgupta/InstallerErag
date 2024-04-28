@@ -1,7 +1,7 @@
 @section('title', 'Application Installation')
 @extends('vendor.InstallerEragViews.app-layout')
 @section('content')
-    <section class="mt-4">
+    <section class="mt-4 bg-radial-gradient">
         <div class="container">
             <form action="{{ route('install_check') }}" method="post">
                 @csrf

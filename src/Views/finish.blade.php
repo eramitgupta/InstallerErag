@@ -4,7 +4,7 @@
     <section class="mt-4">
         <div class="container">
             <div class="row justify-content-center">
-                <img src="{{ asset('install/check.png') }}" class="fit-image">
+                <i class="bi bi-check2-circle text-center"></i>
             </div>
             <div class="row justify-content-center">
                 <div class="col-12 text-center">

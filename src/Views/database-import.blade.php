@@ -28,7 +28,7 @@
 
                             <div class="col-md-4 mt-4">
                                 <div class="form-group">
-                                    <label for="app_debug">
+                                    <label for="app_debug" class="mr-8">
                                         App Debug
                                     </label>
                                     <label for="app_debug_true">

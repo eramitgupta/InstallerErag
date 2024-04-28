@@ -8,6 +8,11 @@ return [
     |--------------------------------------------------------------------------
     */
 
+    'colors' => [
+        'primary' => '#EB4432',
+        'secondary' => '#f85c58',
+    ],
+
     'install_title' => 'Laravel Application Install',
 
     // 
