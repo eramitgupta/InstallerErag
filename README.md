@@ -47,8 +47,6 @@ Inside the `config/app.php` file, find the providers array.
  https://yourdomain.com/install-app
 ```
 
-![screenshot](https://raw.githubusercontent.com/eramitgupta/files/main/InstallerErag.gif)
-
 ### How to customize Requirements and Permissions?
 
 Certainly! If you want just the content without additional explanations, here's the simplified content for your `yourProject/config/install.php` file.
@@ -92,19 +90,6 @@ After adding, you need to go to `yourproject/config/install.php` where the input
     ]
 ```
 
-### Screencasts (Video)
-
-```bash
-https://drive.google.com/file/d/1kqzdLvMZGUIJGCi214jB91jsDOM4UKl0/view
-```
-### Step 1:
-![screenshot](https://raw.githubusercontent.com/eramitgupta/files/main/installeeErag1.png)
-### Step 2:
-![screenshot](https://raw.githubusercontent.com/eramitgupta/files/main/installeeErag2.png)
-### Step 3:
-![screenshot](https://raw.githubusercontent.com/eramitgupta/files/main/installeeErag3.png)
-### Step 4:
-![screenshot](https://raw.githubusercontent.com/eramitgupta/files/main/installeeErag4.png)
 
 ### License
 
