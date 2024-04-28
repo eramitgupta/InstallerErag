@@ -47,6 +47,8 @@ Inside the `config/app.php` file, find the providers array.
  https://yourdomain.com/install-app
 ```
 
+![screenshot](https://raw.githubusercontent.com/eramitgupta/files/main/InstallerErag.gif)
+
 ### Step 4 chmod permissions file_or_directory
 
 ```bash
