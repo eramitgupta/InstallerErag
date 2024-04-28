@@ -47,6 +47,12 @@ Inside the `config/app.php` file, find the providers array.
  https://yourdomain.com/install-app
 ```
 
+### Step 4 chmod permissions file_or_directory
+
+```bash
+ sudo chmod -R 775 directory_name
+```
+
 ### How to customize Requirements and Permissions?
 
 Certainly! If you want just the content without additional explanations, here's the simplified content for your `yourProject/config/install.php` file.
