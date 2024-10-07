@@ -30,7 +30,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "InstallerErag\\InstallerEragServiceProvider"
+                "InstallerErag\\InstallerServiceProvider"
             ],
             "aliases": {
                 "InstallerErag": "InstallerErag\\Facades\\InstallerErag"
