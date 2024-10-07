@@ -10,26 +10,22 @@ class DatabaseManager
 {
     /**
      * Migrate and seed the database.
-     *
-     * @return array
      */
-    public static function MigrateAndSeed()
+    public static function MigrateAndSeed(): array
     {
-        $dm = new DatabaseManager();
+        $dm = new DatabaseManager;
         $outputLog = new BufferedOutput;
+
         return $dm->migrate($outputLog);
     }
 
     /**
      * Run the migration and call the seeder.
-     *
-     * @param  \Symfony\Component\Console\Output\BufferedOutput  $outputLog
-     * @return array
      */
-    private function migrate(BufferedOutput $outputLog)
+    private function migrate(BufferedOutput $outputLog): array
     {
         try {
-           Artisan::call('migrate:fresh', [
+            Artisan::call('migrate:fresh', [
                 '--force' => true, // You can use --force to avoid prompts if needed
             ]);
         } catch (Exception $e) {
@@ -41,15 +37,13 @@ class DatabaseManager
 
     /**
      * Seed the database.
-     *
-     * @param  \Symfony\Component\Console\Output\BufferedOutput  $outputLog
-     * @return array
      */
-    private function seed(BufferedOutput $outputLog)
+    private function seed(BufferedOutput $outputLog): array
     {
         try {
             Artisan::call('db:seed', ['--force' => true], $outputLog);
-              return ['success', $outputLog];
+
+            return ['success', $outputLog];
         } catch (Exception $e) {
             return ['error', $outputLog];
         }

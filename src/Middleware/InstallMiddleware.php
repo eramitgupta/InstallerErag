@@ -14,11 +14,11 @@ class InstallMiddleware
         if ($this->alreadyInstalled()) {
             return redirect(URL::to('/'));
         }
-        $response = $next($request);
-        return $response;
+
+        return $next($request);
     }
 
-    public function alreadyInstalled()
+    public function alreadyInstalled(): bool
     {
         return file_exists(storage_path('installed'));
     }

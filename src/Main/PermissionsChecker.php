@@ -4,15 +4,12 @@ namespace InstallerErag\Main;
 
 class PermissionsChecker
 {
-    /**
-     * @var array
-     */
-    protected $results = [];
+    protected array $results = [];
 
     /**
      * Set the result array permissions and errors.
      *
-     * @return mixed
+     * @return void
      */
     public function __construct()
     {
@@ -23,11 +20,8 @@ class PermissionsChecker
 
     /**
      * Check for the folders permissions.
-     *
-     * @param  array  $folders
-     * @return array
      */
-    public function check(array $folders)
+    public function check(array $folders): array
     {
         foreach ($folders as $folder => $permission) {
             if (! ($this->getPermission($folder) >= $permission)) {
@@ -42,39 +36,28 @@ class PermissionsChecker
 
     /**
      * Get a folder permission.
-     *
-     * @param  $folder
-     * @return string
      */
-    private function getPermission($folder)
+    private function getPermission($folder): string
     {
         return substr(sprintf('%o', fileperms(base_path($folder))), -4);
     }
 
     /**
      * Add the file to the list of results.
-     *
-     * @param  $folder
-     * @param  $permission
-     * @param  $isSet
      */
-    private function addFile($folder, $permission, $isSet)
+    private function addFile($folder, $permission, $isSet): void
     {
-        array_push($this->results['permissions'], [
+        $this->results['permissions'][] = [
             'folder' => $folder,
             'permission' => $permission,
             'isSet' => $isSet,
-        ]);
+        ];
     }
 
     /**
      * Add the file and set the errors.
-     *
-     * @param  $folder
-     * @param  $permission
-     * @param  $isSet
      */
-    private function addFileAndSetErrors($folder, $permission, $isSet)
+    private function addFileAndSetErrors($folder, $permission, $isSet): void
     {
         $this->addFile($folder, $permission, $isSet);
 

@@ -2,8 +2,8 @@
 
 namespace InstallerErag\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -16,83 +16,74 @@ use InstallerErag\Main\RequirementsChecker;
 
 class InstallerController extends Controller
 {
-     /**
-      * @var RequirementsChecker
-      */
-     protected $requirements;
+    protected RequirementsChecker $requirements;
 
-     /**
-      * @var PermissionsChecker
-      */
-     protected $permissions;
+    protected PermissionsChecker $permissions;
 
+    public function __construct(PermissionsChecker $permissions, RequirementsChecker $requirements)
+    {
+        $this->permissions = $permissions;
+        $this->requirements = $requirements;
+    }
 
-     public function __construct(PermissionsChecker $permissions, RequirementsChecker  $requirements)
-     {
-          $this->permissions = $permissions;
-          $this->requirements = $requirements;
-     }
+    public function index()
+    {
 
-     public function index()
-     {
+        $permissions = $this->permissions->check(
+            config('install.permissions')
+        );
 
-          $permissions = $this->permissions->check(
-               config('install.permissions')
-          );
+        $phpSupportInfo = $this->requirements->checkPHPversion(
+            config('install.core.minPhpVersion')
+        );
+        $requirements = $this->requirements->check(
+            config('install.requirements')
+        );
 
-          $phpSupportInfo = $this->requirements->checkPHPversion(
-               config('install.core.minPhpVersion')
-          );
-          $requirements = $this->requirements->check(
-               config('install.requirements')
-          );
+        return view('InstallerEragViews::index', compact('permissions', 'requirements', 'phpSupportInfo'));
+    }
 
+    public function install_check()
+    {
+        return redirect(route('database_import'));
+    }
 
-          return view('InstallerEragViews::index', compact('permissions', 'requirements', 'phpSupportInfo'));
-     }
+    public function account()
+    {
+        DatabaseManager::MigrateAndSeed();
 
+        return view('InstallerEragViews::account');
+    }
 
-     public function install_check()
-     {
-          return redirect(route('database_import'));
-     }
+    public function saveAccount(Request $request, Redirector $redirect)
+    {
+        $rules = config('install.account');
 
+        $validator = Validator::make($request->all(), $rules);
 
-     public function account()
-     {
-          DatabaseManager::MigrateAndSeed();
-          return view('InstallerEragViews::account');
-     }
+        if ($validator->fails()) {
+            return $redirect->route('account')->withInput()->withErrors($validator->errors());
+        }
 
-     public function saveAccount(Request $request, Redirector $redirect)
-     {
-          $rules = config('install.account');
+        unset($request['_token']);
 
-          $validator = Validator::make($request->all(), $rules);
+        $request['password'] = Hash::make($request->password);
 
-          if ($validator->fails()) {
-               return $redirect->route('account')->withInput()->withErrors($validator->errors());
-          }
+        DB::table('users')->insert($request->all());
 
-          unset($request['_token']);
+        return redirect(route('finish'));
+    }
 
-          $request['password'] = Hash::make($request->password);
+    public function finish()
+    {
+        return view('InstallerEragViews::finish');
 
-          DB::table('users')->insert($request->all());
+    }
 
-          return redirect(route('finish'));
-     }
+    public function finishSave()
+    {
+        InstalledManager::create();
 
-     public function finish()
-     {
-          return view('InstallerEragViews::finish');
-
-     }
-
-     public function finishSave()
-     {
-          InstalledManager::create();
-          return redirect(URL::to('/'));
-     }
-
+        return redirect(URL::to('/'));
+    }
 }

@@ -1,109 +1,119 @@
+## Laravel Installer: Easy & User-Friendly
+<center>
+<img width="956" alt="Screenshot 2024-10-04 at 10 34 23 PM" src="https://github.com/user-attachments/assets/b05fe465-6349-4705-9cf5-4f7086182f2d">
+</center>
+InstallerErag packages can be seamlessly integrated into any Laravel project. Designed for simplicity, this package allows you to dynamically configure essential settings such as:
 
-## The Laravel installer is very user-friendly and easy to install.
+- Minimum PHP version required
+- PHP execution
+- Default Laravel folder permissions
+- `.env` file setup
+- Custom account form
 
-<p align="center">
-  <a href="https://paypal.me/teamdevgeek">
-    <img src="https://github.com/eramitgupta/server-commands/blob/main/%24-donate-ff69b4.svg">
-  </a>
-</p>
-
-
-InstallerErag packages can be easily installed with any Laravel project. They are designed to be user-friendly and simple to use. With InstallerErag, you can easily configure all the necessary configurations dynamically, including the minimum required PHP version, PHP execution, default Laravel folder permissions, .env file setup, and custom account form. Additionally, the package includes an automated database migration and seed process.
+Additionally, InstallerErag automates database migrations and seeding processes.
 
 ![Laravel-InstallerErag](https://github.com/user-attachments/assets/43c68ea8-1544-4616-ba07-2462cfe384f4)
 
 ## Getting Started
 
+Install the package via Composer:
+
 ```bash
 composer require erag/installererag
 ```
 
-### Step 1
+### Step 1: Register the Service Provider
 
-It seems like you are trying to include a service provider in your Laravel application. If you want to add the `InstallerErag\InstallerServiceProvider::class` to your Laravel application, you typically need to follow these Steps:
+#### Laravel 11.x
 
-Locate `config/app.php`:
-Open the `config/app.php` file in your Laravel project.
+Ensure the service provider is registered in `/bootstrap/providers.php`:
 
-Find providers array:
-Inside the `config/app.php` file, find the providers array.
+```php
+return [
+    // ...
+    InstallerErag\InstallerServiceProvider::class
+];
+```
 
-```bash
+#### Laravel 10.x
+
+Add the service provider to `config/app.php`:
+
+```php
 'providers' => [
     // ...
     InstallerErag\InstallerServiceProvider::class,
+];
+```
+
+### Step 2: Publish Vendor Files
+
+Run the following command to publish the necessary assets:
+
+```bash
+php artisan vendor:publish --tag=InstallerErag --force
+```
+
+### Step 3: Start Installation
+
+Navigate to your installation URL:
+
+```bash
+https://yourdomain.com/install-app
+```
+
+### Step 4: Set Folder Permissions
+
+Ensure the appropriate file or directory permissions with:
+
+```bash
+sudo chmod -R 775 directory_name
+```
+
+## Customizing Requirements and Permissions
+
+To customize PHP requirements or folder permissions, edit `yourProject/config/install.php`:
+
+```php
+'requirements' => [
+    // Add or remove PHP extensions as needed
 ],
+'permissions' => [
+    // Add or remove folder permissions as needed
+]
 ```
 
-### Step 2
+## Adding Dynamic `.env` Variables
 
-```bash
- php artisan vendor:publish --tag=InstallerErag --force
-```
+To add new `.env` variables dynamically, modify `yourProject/config/install.php` like so:
 
-### Step 3 Now start the installation
-
-```bash
- https://yourdomain.com/install-app
-```
-
-![screenshot](https://raw.githubusercontent.com/eramitgupta/files/main/InstallerErag.gif)
-
-### Step 4 chmod permissions file_or_directory
-
-```bash
- sudo chmod -R 775 directory_name
-```
-
-### How to customize Requirements and Permissions?
-
-Certainly! If you want just the content without additional explanations, here's the simplified content for your `yourProject/config/install.php` file.
-
-"requirements" => Add or remove additional PHP extensions as needed <br>
-"permissions" => Add or remove additional folder permissions as needed
-
-### How to add new .env variable dynamic ?
-If you want to create an additional `.env` file based on the configuration in the `yourProject/config/install.php` file, you can follow these Steps:
-We will be displaying of `.env` Within the same, you need to include the following.<br>
-
-The last line, which ends with `.`, followed by a new line character `\n`, will not persist.
-Ex:
-
-```bash
-'needed="34dsf24bcgf"' . "\n".
+```php
+'needed="34dsf24bcgf"' . "\n" .
 'apikey="123456"',
 ```
 
-### How can I insert dynamic extra fields to the Account form?
+## Inserting Dynamic Fields to the Account Form
 
-When you go to the path `resources/views/vendor` you will see `account.blade.php` By modifying it, you can add extra fields like this.
+To add extra fields to the account form:
 
-```bash
- <div class="col-md-12 mb-3">
-    <x-install-input label="Phone Number" required="ture" name="phone_number" type="text"
+1. Navigate to `resources/views/vendor/account.blade.php`.
+2. Add the following code for a new field (e.g., phone number):
+
+```html
+<div class="col-md-12 mb-3">
+    <x-install-input label="Phone Number" required="true" name="phone_number" type="text"
         value="{{ old('phone_number') }}" />
     <x-install-error for="phone_number" />
- </div>
+</div>
 ```
 
-After adding, you need to go to `yourproject/config/install.php` where the input tag name will be, and add it to the account array inside `install.php` like this
+3. Update the input tag in `yourproject/config/install.php`:
 
-
-```bash
- 'account' =>    [
-        'name' => 'required|string|max:255',
-        'email' => 'required|email|unique:users|max:255',
-        'password' => 'required|string|min:6',
-        'phone_number' => 'required',
-    ]
+```php
+'account' => [
+    'name' => 'required|string|max:255',
+    'email' => 'required|email|unique:users|max:255',
+    'password' => 'required|string|min:6',
+    'phone_number' => 'required',
+]
 ```
-
-
-### License
-
-The MIT License (MIT). Please see License File for more information.
-
-> GitHub [@eramitgupta](https://github.com/eramitgupta) &nbsp;&middot;&nbsp;
-> Linkedin [@eramitgupta](https://www.linkedin.com/in/eramitgupta/)&nbsp;&middot;&nbsp;
-> Donote [@eramitgupta](https://paypal.me/teamdevgeek/)
-

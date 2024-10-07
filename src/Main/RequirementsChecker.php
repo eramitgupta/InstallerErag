@@ -4,20 +4,12 @@ namespace InstallerErag\Main;
 
 class RequirementsChecker
 {
-    /**
-     * Minimum PHP Version Supported (Override is in install.php config file).
-     *
-     * @var _minPhpVersion
-     */
-    private $_minPhpVersion = '8.0.0';
+    private string $_minPhpVersion = '8.0.0';
 
     /**
      * Check for the server requirements.
-     *
-     * @param  array  $requirements
-     * @return array
      */
-    public function check(array $requirements)
+    public function check(array $requirements): array
     {
         $results = [];
 
@@ -58,10 +50,8 @@ class RequirementsChecker
 
     /**
      * Check PHP version requirement.
-     *
-     * @return array
      */
-    public function checkPHPversion(string $minPhpVersion = null)
+    public function checkPHPversion(?string $minPhpVersion = null): array
     {
         $minVersionPhp = $minPhpVersion;
         $currentPhpVersion = $this->getPhpVersionInfo();
@@ -87,10 +77,8 @@ class RequirementsChecker
 
     /**
      * Get current Php version information.
-     *
-     * @return array
      */
-    private static function getPhpVersionInfo()
+    private static function getPhpVersionInfo(): array
     {
         $currentVersionFull = PHP_VERSION;
         preg_match("#^\d+(\.\d+)*#", $currentVersionFull, $filtered);
@@ -107,7 +95,7 @@ class RequirementsChecker
      *
      * @return string _minPhpVersion
      */
-    protected function getMinPhpVersion()
+    protected function getMinPhpVersion(): string
     {
         return $this->_minPhpVersion;
     }

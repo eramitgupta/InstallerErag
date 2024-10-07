@@ -1,4 +1,5 @@
 <?php
+
 namespace InstallerErag\Components;
 
 use Closure;

@@ -10,78 +10,72 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use InstallerErag\Main\EnvironmentManager;
 
-
 class DatabaseConyroller extends Controller
 {
-     /**
-      * @var EnvironmentManager
-      */
-     protected $EnvironmentManager;
+    protected EnvironmentManager $EnvironmentManager;
 
+    public function __construct(EnvironmentManager $environmentManager)
+    {
+        $this->EnvironmentManager = $environmentManager;
+    }
 
-     public function __construct(EnvironmentManager $environmentManager)
-     {
-          $this->EnvironmentManager = $environmentManager;
-     }
+    public function databaseImport(Request $request)
+    {
+        return view('InstallerEragViews::database-import');
+    }
 
+    public function saveWizard(Request $request, Redirector $redirect)
+    {
 
-     public function database_import(Request $request)
-     {
-          return view('InstallerEragViews::database-import');
-     }
+        $rules = config('install.environment.form.rules');
 
-     public function saveWizard(Request $request, Redirector $redirect)
-     {
+        $validator = Validator::make($request->all(), $rules);
 
-          $rules = config('install.environment.form.rules');
+        if ($validator->fails()) {
+            return $redirect->route('database_import')->withInput()->withErrors($validator->errors());
+        }
 
-          $validator = Validator::make($request->all(), $rules);
+        if (! $this->checkDatabaseConnection($request)) {
+            return $redirect->route('database_import')->withInput()->withErrors([
+                'database_connection' => 'db connection failed',
+            ]);
+        }
 
-          if ($validator->fails()) {
-               return $redirect->route('database_import')->withInput()->withErrors($validator->errors());
-          }
+        $this->EnvironmentManager->saveFileWizard($request);
 
-          if (!$this->checkDatabaseConnection($request)) {
-               return $redirect->route('database_import')->withInput()->withErrors([
-                    'database_connection' => 'db connection failed',
-               ]);
-          }
+        return redirect(route('account'));
+    }
 
-          $this->EnvironmentManager->saveFileWizard($request);
+    private function checkDatabaseConnection(Request $request): bool
+    {
+        $connection = $request->input('database_connection');
 
-          return redirect(route('account'));
-     }
+        $settings = config("database.connections.$connection");
 
-     private function checkDatabaseConnection(Request $request)
-     {
-          $connection = $request->input('database_connection');
+        config([
+            'database' => [
+                'default' => $connection,
+                'connections' => [
+                    $connection => array_merge($settings, [
+                        'driver' => $connection,
+                        'host' => $request->input('database_hostname'),
+                        'port' => $request->input('database_port'),
+                        'database' => $request->input('database_name'),
+                        'username' => $request->input('database_username'),
+                        'password' => $request->input('database_password'),
+                    ]),
+                ],
+            ],
+        ]);
 
-          $settings = config("database.connections.$connection");
+        DB::purge();
 
-          config([
-               'database' => [
-                    'default' => $connection,
-                    'connections' => [
-                         $connection => array_merge($settings, [
-                              'driver' => $connection,
-                              'host' => $request->input('database_hostname'),
-                              'port' => $request->input('database_port'),
-                              'database' => $request->input('database_name'),
-                              'username' => $request->input('database_username'),
-                              'password' => $request->input('database_password'),
-                         ]),
-                    ],
-               ],
-          ]);
+        try {
+            DB::connection()->getPdo();
 
-          DB::purge();
-
-          try {
-               DB::connection()->getPdo();
-
-               return true;
-          } catch (Exception $e) {
-               return false;
-          }
-     }
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
+    }
 }

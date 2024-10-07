@@ -2,13 +2,13 @@
 
 namespace InstallerErag;
 
-use Illuminate\Support\ServiceProvider;
-use InstallerErag\Middleware\InstallMiddleware;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\ServiceProvider;
 use InstallerErag\Components\InstallError;
 use InstallerErag\Components\InstallInput;
 use InstallerErag\Components\InstallSelect;
+use InstallerErag\Middleware\InstallMiddleware;
 
 class InstallerServiceProvider extends ServiceProvider
 {
@@ -19,7 +19,7 @@ class InstallerServiceProvider extends ServiceProvider
     {
         $this->app->make('InstallerErag\Controllers\InstallerController');
         $this->app->make('InstallerErag\Controllers\DatabaseConyroller');
-        $this->loadViewsFrom(__DIR__ . '/Views', 'InstallerEragViews');
+        $this->loadViewsFrom(__DIR__.'/Views', 'InstallerEragViews');
     }
 
     /**
@@ -27,7 +27,7 @@ class InstallerServiceProvider extends ServiceProvider
      */
     public function boot(Router $router): void
     {
-        include __DIR__ . '/routes.php';
+        include __DIR__.'/routes.php';
 
         $router->middlewareGroup('installCheck', [InstallMiddleware::class]);
 
